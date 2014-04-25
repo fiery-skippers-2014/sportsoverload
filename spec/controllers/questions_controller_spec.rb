@@ -54,5 +54,11 @@ describe QuestionsController do
         post :create, :question => a_question
       }.to change {Question.count}.by(1)
     end
+
+    it 'does not create a new question with invalid params' do
+      expect{
+        post :create, :question => a_question
+      }.to_not change { Question.count }
+    end
   end
 end

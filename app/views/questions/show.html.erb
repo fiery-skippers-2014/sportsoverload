@@ -6,3 +6,24 @@
   <%= @question.body %>
   </div>
 </div>
+
+<h2 class='col-md-12'>Answer this question</h2>
+<div class='answer-question col-md-8'>
+  <%= form_for [@question, @answer], remote: true  do |f| %>
+    <div class="form-group">
+      <%= f.label :body, 'answer' %>
+      <%= f.text_area :body, :class => 'form-control' %>
+      <%= f.submit 'submit' %>
+
+    </div>
+  <% end %>
+</div>
+<h2 class='col-md-12'>Current answers</h2>
+<div class='answers col-md-8'>
+  <ul>
+  <% @question.answers.each do |answer| %>
+
+    <%= render '/shared/answers', :answer => answer %>
+  <% end %>
+</ul>
+</div>
