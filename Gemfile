@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
 gem 'pg'
 
 group :assets do
@@ -15,6 +14,8 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'bcrypt', '~> 3.1.7'
+  gem 'bcrypt-ruby', '~> 3.0.0'
   gem 'debugger'
   gem 'rspec-rails'
 end
