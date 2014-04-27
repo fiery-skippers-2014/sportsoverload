@@ -10,6 +10,7 @@ $(document).ready(function(){
 
   })
   $('form#new_answer').on("ajax:error", function(e, xhr, status, error){
+    console.log(xhr)
     console.log(xhr.responseText)
      $('div#answer-errors').append(xhr.responseText);
   })

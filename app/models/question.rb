@@ -25,14 +25,14 @@ class Question < ActiveRecord::Base
     question_votes = question_votes.sort_by {|k,v| v }.reverse
   end
 
-   def self.question_with_recent_votes
+  def self.question_with_recent_votes
     votes = Vote.all
     questions = {}
     votes.each do |vote|
-        if vote.voteable_type = 'Question'
-            questions[vote.voteable] = vote.created_at
-        end
+      if vote.voteable_type == 'Question'
+        questions[vote.voteable] = vote.created_at
+      end
     end
     questions.sort_by{|k,v| v }.reverse
-   end
+  end
 end
