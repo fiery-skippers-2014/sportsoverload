@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
+
     @questions = Question.order('created_at desc')
     @votes = Question.questions_with_most_votes
     @trending = Question.question_with_recent_votes
@@ -13,7 +14,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new params[:question]
-    @question.user_id = session[:user_id]
+    @question.user_id = current_user.id
     if @question.save
       redirect_to question_path(@question)
     else
