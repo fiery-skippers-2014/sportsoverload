@@ -3,11 +3,11 @@
     <h3 class="question-title-header"><%= @question.title %><h3>
   </div>
   <% if current_user %>
-    <div class="vote-box">
+    <div class="question-vote-box">
       <%= form_tag({ controller: "votes", action: "update", vote_type: true, voteable: { id: @question, type: @question.class }}, method: "put", remote: true) do -%>
         <%= button_tag "Boss", :class => 'btn btn-success' %>
       <% end -%>
-      <div class="score">
+      <div class="question-score">
         <span><%= @question.vote_count %></span>
       </div>
       <%= form_tag({ controller: "votes", action: "update", vote_type: false, voteable: { id: @question, type: @question.class }}, method: "put", remote: true) do -%>
