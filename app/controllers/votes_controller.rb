@@ -4,13 +4,11 @@ class VotesController < ApplicationController
     vote = Vote.create
     if vote && params[:vote_type] == true
       Vote.assign_vote_attributes(vote, params)
-      # redirect_to question_path(params[:voteable]["id"])
       constant = params[:voteable]["type"].classify.constantize
       @voteable = constant.find(params[:voteable]["id"])
       render partial:'/shared/vote_count', locals: { voteable: @voteable }
     else
       Vote.assign_vote_attributes(vote, params)
-
       constant = params[:voteable]["type"].classify.constantize
       @voteable = constant.find(params[:voteable]["id"])
       render partial:'/shared/vote_count', locals: { voteable: @voteable }

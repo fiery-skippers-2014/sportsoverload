@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
     @questions = Question.order('created_at desc')
     @votes = Question.questions_with_most_votes
     @trending = Question.question_with_recent_votes
-    p @trending
   end
 
   def new

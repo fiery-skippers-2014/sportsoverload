@@ -35,14 +35,4 @@ class Question < ActiveRecord::Base
     end
     questions.sort_by{|k,v| v }.reverse
    end
-
-
-    # questions =  Question.all
-    # question_order = {}
-    #     questions.each do |question|
-    #         question_order[question.votes.created_at] = question
-    #     end
-    #     p question_order
-
-
 end
