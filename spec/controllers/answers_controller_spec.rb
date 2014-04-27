@@ -9,8 +9,6 @@ describe AnswersController do
       expect{
         post :create, :question_id => question.id, :answer => answer
       }.to change {Answer.count}.by(1)
-
-
     end
 
     it "doesn't create a new answer with invalid params" do

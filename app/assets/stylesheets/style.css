@@ -96,15 +96,15 @@ ul.homepage-questions li:nth-child(2n){
   background-color: #FAFAD2;
 }
 
-.vote-box {
+.question-vote-box {
   float: left;
   padding-right: 10px;
 }
-.vote-box .score {
+.question-vote-box .question-score {
   text-align: center;
   font-size: 1.3em;
 }
-div.vote-box button {
+div.question-vote-box button {
   width: 85px;
 }
 

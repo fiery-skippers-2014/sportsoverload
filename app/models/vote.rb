@@ -5,8 +5,8 @@ class Vote < ActiveRecord::Base
   def self.assign_vote_attributes(vote, params)
     vote.update_attributes(
         vote_type: params[:vote_type],
-        voteable_id: params[:voteable]["id"],
-        voteable_type: params[:voteable]["type"]
+        voteable_id: params[:voteable_id],
+        voteable_type: params[:voteable_type]
         )
   end
 end
