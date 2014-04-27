@@ -13,7 +13,7 @@ feature 'add a comment' do
     fill_in 'Password', :with => answer.user.password
     click_on "Sign In"
      end
-  scenario 'as a signed in user to a question with valid information', js: true do
+  scenario 'as a signed in user to a question with valid information', js:true do
     visit question_path(answer.question)
      click_on 'comment on question'
     fill_in 'Comment', :with => comment[:body]
@@ -23,7 +23,7 @@ feature 'add a comment' do
 
   end
 
-  scenario "as a signed in user, add a comment to an answer", js: true do
+  scenario "as a signed in user, add a comment to an answer", js:true do
     visit question_path(answer.question)
     click_on 'Comment on this'
     fill_in 'Comment Answer', :with => comment[:body]

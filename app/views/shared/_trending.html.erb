@@ -3,7 +3,7 @@
     <% @trending.each do |question, vote_time| %>
       <li>
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-4 single-question"><%= question.votes.count %></div>
+            <div class="col-md-4 col-sm-4 col-xs-4 single-question"><%= question.vote_count %></div>
            <div class="col-md-8 col-sm-8 col-xs-8 single-question">
             <%= link_to question.title, question_path(question) %>
             <span class="user-name"><%= question.user.username %></span> voted on <%= time_ago_in_words(vote_time) %> ago
