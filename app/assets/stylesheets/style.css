@@ -20,11 +20,15 @@ h3.question-title-header {
   padding:20px 0;
   border-top: 1px solid #aaa;
 }
-
+body{
+  /*background: url('jordan.jpg');*/
+}
 .single-answer-body {
   font-size: 1.4em;
 }
-
+.add-comment{
+  float:left;
+}
 .single-answer-info, .question-info {
   float: right;
 }
@@ -55,6 +59,10 @@ h3.question-title-header {
 }
 .nav-pills{
   float:right;
+}
+.container{
+  
+background-color:white;
 }
 
 
@@ -110,7 +118,9 @@ ul.homepage-questions li:nth-child(2n){
 div.question-vote-box button {
   width: 85px;
 }
+ul{
 
+}
 .clearfix {
   clear: both;
 }
