@@ -11,4 +11,8 @@ class Answer < ActiveRecord::Base
     down_votes = self.votes.select {|vote| vote.vote_type == false}
     up_votes.length - down_votes.length
   end
+
+  def order_by_votes
+    
+  end
 end

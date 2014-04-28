@@ -25,7 +25,8 @@ class QuestionsController < ApplicationController
     @comment = Comment.new
     @answer = Answer.new
     @question = Question.find params[:id]
-    @answers = @question.order_answers_by_latest
+    @answers = @question.order_answers_by_votes
+    # @answers = @question.order_answers_by_latest  
   end
 
 end
