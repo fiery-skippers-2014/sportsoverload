@@ -1,3 +1,6 @@
+// Use Object Literals to encompase code and register named callbacks (instead of annonymous functions)
+// for your ajax:success, etc.
+
 $(document).ready(function(){
   $('form#new_answer').on("ajax:success", function(e, data){
     $('ul.answer-list').prepend(data);

@@ -1,3 +1,5 @@
+// Don't forget to register ajax:error
+
 $(document).ready(function(){
 
   $('.question-vote-box form').on("ajax:success", function(e,data){
@@ -8,6 +10,7 @@ $(document).ready(function(){
 
   $('.answer-upvote-box form').on("ajax:success", function(e,data){
     e.preventDefault();
+    // #CR put id's to avoid long jquery searches.
     var parent = $(this).parents()[1]
     var idOfScore = $(parent).children()[3].id
     $('#'+idOfScore).html(data)
