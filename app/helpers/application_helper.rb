@@ -19,4 +19,9 @@ module AuthenticateHelper
       return User.find(session[:user_id])
     end
   end
+
+  def current_user_name
+    user = current_user
+    user.username
+  end
 end

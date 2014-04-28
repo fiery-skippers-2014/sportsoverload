@@ -16,4 +16,12 @@ class AnswersController < ApplicationController
     end
   end
 
+  def update
+    answer = Answer.find(params[:id])
+    answer.best = true
+    if answer && answer.update_attributes(best: true)
+      render nothing: true
+    end
+  end
+
 end

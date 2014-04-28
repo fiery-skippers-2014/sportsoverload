@@ -5,7 +5,8 @@ feature "Voting on question" do
   let!(:question) { FactoryGirl.create :question }
   before :each do
     page.set_rack_session(:user_id => user.id)
-    visit question_path(question)
+    visit root_path
+    first(:link, question.title).click
   end
 
   scenario "a user can vote on questions" do

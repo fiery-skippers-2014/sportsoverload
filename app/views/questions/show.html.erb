@@ -64,7 +64,7 @@
 <div class='answers col-md-8'>
   <ul class='answer-list'>
   <% @answers.each do |answer| %>
-    <%= render '/shared/answers', :answer => answer %>
+    <%= render '/shared/answers', :answer => answer, :question => @question %>
     <% if current_user %>
       <%= link_to 'Comment on this', root_path, remote: true, :class => 'show-comment-form', :data => {id: answer.id } %>
     <% else %>
@@ -76,7 +76,7 @@
   <div class='display-answer-comments'>
     <ul class='comment-list-answer' id="answer<%= answer.id %>" >
       <% answer.comments.each do |comment| %>
-        <%= render '/shared/comments', :comment => comment %>
+        <%= render '/shared/comments', :comment => comment%>
       <% end %>
     </ul>
   </div>
