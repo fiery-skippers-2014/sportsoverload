@@ -20,12 +20,19 @@ $(document).ready(function(){
     $('#'+idOfScore).html(data)
   })
 
+  $('.comment-upvote-box form').on("ajax:success", function(e,data){ 
+    e.preventDefault();
+    var parent = $(this).parents()[1]
+    var idOfScore = $(parent).children()[1].id
+    console.log(parent)
+    $('#'+idOfScore).html(data)
+  })
 
-  // $('a.add-comment').on('click', function(e){
-  //   e.preventDefault()
-
-  //   $('.comment-form').toggle()
-  // })
-
+  $('.comment-downvote-box form').on("ajax:success", function(e,data){
+    e.preventDefault();
+    var parent = $(this).parents()[1]
+    var idOfScore = $(parent).children()[1].id
+    $('#'+idOfScore).html(data)
+  })
 
 });
