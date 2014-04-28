@@ -17,11 +17,12 @@ class Question < ActiveRecord::Base
   end
 
   def order_answers_by_votes
+    #CR try to use AR .order and .count here directly instead of a sort.
     ordered_answers = self.answers.sort do |answer,second|
        answer.vote_count <=> second.vote_count
     end
     ordered_answers.reverse
-    
+
   end
 
   def self.questions_with_most_votes

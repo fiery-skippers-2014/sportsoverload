@@ -1,5 +1,6 @@
 <li class='single-comment'>
   <% if current_user %>
+  <!-- #CR use a votes partial - lot's of repeated code.  -->
     <div class="comment-upvote-box">
     <% values = { vote_type: true, voteable_id: comment.id, voteable_type: comment.class } %>
       <%= form_tag '/votes/1', method: "put", remote: true do -%>
@@ -12,7 +13,7 @@
       <div id="comment-score<%= comment.id %>">
         <span><%= comment.vote_count %></span>
       </div>
-    <div class="comment-downvote-box">  
+    <div class="comment-downvote-box">
     <% values = { vote_type: false, voteable_id: comment.id, voteable_type: comment.class } %>
       <%= form_tag '/votes/1', method: "put", remote: true do -%>
         <% values.each_pair do |key, value|%>

@@ -10,4 +10,5 @@ describe CommentsController do
     }.to change { Comment.count }.by(1)
     end
   end
+  #CR - always test valid and invalid params on create
 end

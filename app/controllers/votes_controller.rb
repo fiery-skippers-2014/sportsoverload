@@ -3,6 +3,7 @@ class VotesController < ApplicationController
   def update
     vote = Vote.create
     if vote && params[:vote_type] == true
+      #CR - what is the difference between your if and else?
       Vote.assign_vote_attributes(vote, params)
       constant = params[:voteable_type].classify.constantize
       @voteable = constant.find(params[:voteable_id])
