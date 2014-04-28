@@ -75,6 +75,9 @@ textarea.form-control{
 .answer-question {
   display: none;
 }
+.best-answer {
+  background-color: rgba(0, 255, 10, 0.32);
+}
 
 .error {
   color: red;

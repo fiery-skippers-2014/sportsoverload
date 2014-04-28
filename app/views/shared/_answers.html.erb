@@ -1,5 +1,6 @@
-<li class='single-answer'>
 
+
+<li class='single-answer <%= 'best-answer' if answer.best? %>'>
   <div class="single-answer-body">
     <%= answer.body %>
   </div>
@@ -17,7 +18,7 @@
       <div id="answer-score<%= answer.id %>">
         <span><%= answer.vote_count %></span>
       </div>
-    <div class="answer-downvote-box">  
+    <div class="answer-downvote-box">
     <% values = { vote_type: false, voteable_id: answer.id, voteable_type: answer.class } %>
       <%= form_tag '/votes/1', method: "put", remote: true do -%>
         <% values.each_pair do |key, value|%>
@@ -25,6 +26,14 @@
         <% end %>
         <%= button_tag "Not Boss", :class => 'btn btn-danger' %>
       <% end -%>
+    </div>
+  <% end %>
+
+  <% if current_user_name == question.user.username %>
+    <div data-answer="best">
+      <%= form_tag "/answers/#{answer.id}", method: "put", remote: true do -%>
+        <%= button_tag "Best", :class => 'btn btn-primary best-button' %>
+      <% end %>
     </div>
   <% end %>
 </li>
