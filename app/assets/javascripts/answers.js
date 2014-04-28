@@ -7,7 +7,6 @@ $(document).ready(function(){
     var count = $('span#answer-count').data('count')
     $('span#answer-count').html(count + 1)
 
-
   })
   $('form#new_answer').on("ajax:error", function(e, xhr, status, error){
     console.log(xhr)
@@ -18,8 +17,6 @@ $(document).ready(function(){
   $('a.show-answer-form').on('click', function(){
     $('div.answer-question').toggle()
   })
-
-
 
 });
 

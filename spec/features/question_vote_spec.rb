@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 feature "Voting on question" do
-  let!(:question) { FactoryGirl.create :question }
   let!(:user) { FactoryGirl.create :user}
+  let!(:question) { FactoryGirl.create :question }
   before :each do
     page.set_rack_session(:user_id => user.id)
     visit root_path
