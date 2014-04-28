@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   def show
-    user_object = current_user
-    if user_object && user_object.id == session[:user_id]
+      #CR what is the point of user_object?  Is your goal to only
+      # show info for logged in user? Or only show this user if there is a
+      # logged in user?
+  user_object = current_user
+  if user_object && user_object.id == session[:user_id]
       @user = User.find(params[:id])
     else
       redirect_to root_path

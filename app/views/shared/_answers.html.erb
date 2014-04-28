@@ -6,6 +6,7 @@
   </div>
   <span class="single-answer-info"><span class='user-name'><%= answer.user.username %></span>  answered about <%= time_ago_in_words(answer.created_at) %> ago</span>
   <% if current_user %>
+ <!-- #CR why not use form_for @vote here?  -->
     <div class="answer-upvote-box">
     <% values = { vote_type: true, voteable_id: answer.id, voteable_type: answer.class } %>
       <%= form_tag '/votes/1', method: "put", remote: true do -%>
@@ -18,6 +19,7 @@
       <div id="answer-score<%= answer.id %>">
         <span><%= answer.vote_count %></span>
       </div>
+      <!-- #CR use a partial for up and down  -->
     <div class="answer-downvote-box">
     <% values = { vote_type: false, voteable_id: answer.id, voteable_type: answer.class } %>
       <%= form_tag '/votes/1', method: "put", remote: true do -%>

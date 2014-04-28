@@ -9,6 +9,7 @@ class Comment < ActiveRecord::Base
     question.comments.order('created_at asc')
   end
 
+#CR add method to vote model for up and down votes
   def vote_count
     up_votes = self.votes.select {|vote| vote.vote_type == true}
     down_votes = self.votes.select {|vote| vote.vote_type == false}

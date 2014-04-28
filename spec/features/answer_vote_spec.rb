@@ -18,5 +18,7 @@ feature "Voting on answer" do
     end
     expect(page).to have_content(answer.vote_count)
   end
+
+  #CR don't factor out a before each until it is needed in multiple scenarios
 end
 

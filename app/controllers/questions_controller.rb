@@ -14,9 +14,11 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new params[:question]
     @question.user_id = current_user.id
+    #CR don't set the id directly @question.user = current_user
     if @question.save
       redirect_to question_path(@question)
     else
+      #CR this should go somewhere!
       render :nothing => true
     end
   end
@@ -26,7 +28,7 @@ class QuestionsController < ApplicationController
     @answer = Answer.new
     @question = Question.find params[:id]
     @answers = @question.order_answers_by_votes
-    # @answers = @question.order_answers_by_latest  
+    # @answers = @question.order_answers_by_latest
   end
 
 end

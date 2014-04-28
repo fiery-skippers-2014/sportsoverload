@@ -1,6 +1,8 @@
 require 'active_support/core_ext'
 
 module ApplicationHelper
+#CR just define a current user method and access it's name when needed
+# also, this is already in Athentication Helper.
 
   def current_user_name
     user = current_user
@@ -23,6 +25,7 @@ module AuthenticateHelper
     if session[:user_id]
       return User.find(session[:user_id])
     end
+    #CR optimize this as @user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def current_user_name

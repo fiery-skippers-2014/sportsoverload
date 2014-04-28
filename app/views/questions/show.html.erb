@@ -1,3 +1,4 @@
+<!-- #CR dry up with partials -->
 <div class='question col-md-12'>
   <div class="question-title">
     <h3 class="question-title-header"><%= @question.title %><h3>
@@ -8,13 +9,13 @@
   </div>
   <% if current_user %>
     <%= render '/shared/vote_box', :question => @question %>
-    
+
   <% end %>
 
-  
+
   <div class='clearfix'></div>
   <div class="question-info"><%= @question.user.username %> asked <%= time_ago_in_words(@question.created_at) %> ago
-    
+
 
     <% if current_user %>
       <%= link_to 'comment on question', questions_path, :class => 'add-comment' %>
@@ -71,7 +72,7 @@
       <p>You must be <%= link_to 'logged in', new_session_path %> to comment</p>
     <% end %>
      <%= render '/shared/display_comments',:answer => answer,:comment => @comment %>
-    
+
 
   <div class='display-answer-comments'>
     <ul class='comment-list-answer' id="answer<%= answer.id %>" >
@@ -80,7 +81,7 @@
       <% end %>
     </ul>
   </div>
-    
+
 
   <% end %>
 </ul>

@@ -16,6 +16,7 @@ describe QuestionsController do
     end
     it "shows the correct number of questions" do
       get :index
+      #CR use your let to make an array of questions and here use length
       expect(Question.all.length).to eq(2)
     end
   end
