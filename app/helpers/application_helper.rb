@@ -2,6 +2,11 @@ require 'active_support/core_ext'
 
 module ApplicationHelper
 
+  def current_user_name
+    user = current_user
+    user.username
+  end
+
   def datetime_to_date(datetime)
     datetime.to_date
   end

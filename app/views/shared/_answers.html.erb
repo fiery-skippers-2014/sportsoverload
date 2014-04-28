@@ -25,11 +25,11 @@
           <%= hidden_field_tag key, value %>
         <% end %>
         <%= button_tag "Not Boss", :class => 'btn btn-danger' %>
-      <% end -%>
+      <% end %>
     </div>
   <% end %>
 
-  <% if current_user_name == question.user.username %>
+  <% if current_user_name == @question.user.username %>
     <div data-answer="best">
       <%= form_tag "/answers/#{answer.id}", method: "put", remote: true do -%>
         <%= button_tag "Best", :class => 'btn btn-primary best-button' %>
