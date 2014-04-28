@@ -16,6 +16,14 @@ class Question < ActiveRecord::Base
     self.answers.order('created_at desc')
   end
 
+  def order_answers_by_votes
+    ordered_answers = self.answers.sort do |answer,second|
+       answer.vote_count <=> second.vote_count
+    end
+    ordered_answers.reverse
+    
+  end
+
   def self.questions_with_most_votes
     questions = Question.all
     question_votes = {}
