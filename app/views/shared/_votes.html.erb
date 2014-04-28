@@ -5,8 +5,8 @@
           <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-4 single-question"><%= question.vote_count %></div>
              <div class="col-md-8 col-sm-8 col-xs-8 single-question">
-              <%= link_to question.title, question_path(question) %>
-              <span class="user-name"><%= question.user.username %></span> asked <%= time_ago_in_words(question.created_at) %> ago
+              <%= link_to question.title, question_path(question),class: "question_head" %>
+              <div class="user-name"><%= question.user.username %> asked <%= time_ago_in_words(question.created_at) %> ago</div>
              </div>
           </div>
         </li>

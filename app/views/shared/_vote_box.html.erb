@@ -1,0 +1,11 @@
+  <div class="question-vote-box">
+      <%= form_tag({ controller: "votes", action: "update", vote_type: true, voteable_id: @question, voteable_type: @question.class }, method: "put", remote: true) do -%>
+        <%= button_tag "Boss", :class => 'btn btn-success' %>
+      <% end -%>
+      <div class="question-score">
+        <span><%= @question.vote_count %></span>
+      </div>
+      <%= form_tag({ controller: "votes", action: "update", vote_type: false, voteable_id: @question, voteable_type: @question.class }, method: "put", remote: true) do -%>
+        <%= button_tag "Not Boss", :class => 'btn btn-danger' %>
+      <% end %>
+    </div>

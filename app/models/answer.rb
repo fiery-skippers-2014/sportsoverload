@@ -15,4 +15,8 @@ class Answer < ActiveRecord::Base
   def best?
     self.best
   end
+
+  def order_by_votes
+
+  end
 end

@@ -9,6 +9,7 @@ h1 {
   display: inline;
 }
 
+}
 h3.question-title-header {
   border-bottom: 1px solid #bbb;
   padding-bottom: 5px;
@@ -19,11 +20,15 @@ h3.question-title-header {
   padding:20px 0;
   border-top: 1px solid #aaa;
 }
-
+body{
+  /*background: url('jordan.jpg');*/
+}
 .single-answer-body {
   font-size: 1.4em;
 }
-
+.add-comment{
+  float:left;
+}
 .single-answer-info, .question-info {
   float: right;
 }
@@ -34,14 +39,16 @@ h3.question-title-header {
 .row {
   padding: 20px 0;
 }
-
+.question_head{
+  font-size: 1.5em;
+}
 .question-body{
   font-size: 1.3em;
 }
 
 .question {
   padding-bottom: 10px;
-  /*background-color: #efefef;*/
+  background-color: #efefef;
 }
 
 .header{
@@ -52,6 +59,10 @@ h3.question-title-header {
 }
 .nav-pills{
   float:right;
+}
+.container{
+  
+background-color:white;
 }
 
 
@@ -110,7 +121,9 @@ ul.homepage-questions li:nth-child(2n){
 div.question-vote-box button {
   width: 85px;
 }
+ul{
 
+}
 .clearfix {
   clear: both;
 }

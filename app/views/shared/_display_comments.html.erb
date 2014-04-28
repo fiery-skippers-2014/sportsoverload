@@ -1,0 +1,8 @@
+
+<div class='comment-form' id="answer<%= answer.id %>">
+      <%= form_for [answer, @comment], remote: true, :html => {'data-id' => answer.id, :class => 'answer-comment-form' } do |t| %>
+        <%= t.label :body, 'Comment Answer' %>
+        <%= t.text_field :body %>
+        <%= t.button 'Submit Answer Comment', :class => 'btn btn-primary' %>
+      <% end %>
+    </div>
